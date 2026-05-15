@@ -1,5 +1,5 @@
 window.APP_CONFIG = {
-  SUPABASE_URL: "https://wfqnckfxbsunbnhonk.supabase.co",
+  SUPABASE_URL: "https://wfqnckfxbnsunbnnhonk.supabase.co",
 
   SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndmcW5ja2Z4Ym5zdW5ibm5ob25rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg4MTcwMzYsImV4cCI6MjA5NDM5MzAzNn0.BJBNGRvOipxXJuQZezzg9dYS0vxjxI3O4KaOEFGq_FQ"",
 
