@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | 2FLY Payment Verification Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="logo-lockup">
+        <div class="logo-mark">2F</div>
+        <div>
+          <div class="brand-title">2FLY Payment Hub</div>
+          <div class="brand-subtitle">Owner/Admin access only</div>
+        </div>
+      </div>
+
+      <h1>Verify money clean.</h1>
+      <p>Track online and walk-in payments from your 3 GCash accounts, then sync verified collections to Google Sheets.</p>
+
+      <div id="loginNotice" class="notice" hidden></div>
+
+      <form id="loginForm">
+        <div class="field">
+          <label>Email</label>
+          <input name="email" type="email" placeholder="admin@2flygalleria.com" required>
+        </div>
+
+        <div class="field">
+          <label>Password</label>
+          <input name="password" type="password" placeholder="••••••••" required>
+        </div>
+
+        <button class="btn" type="submit" style="width:100%">Login</button>
+      </form>
+
+      <p class="helper">Create users inside Supabase Authentication first. Owner/admin roles are handled in the profiles table.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

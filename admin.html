@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verify Payments | 2FLY Payment Verification Hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="admin">
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="logo-lockup" href="admin.html">
+        <div class="logo-mark">2F</div>
+        <div>
+          <div class="brand-title">2FLY Payment Hub</div>
+          <div class="brand-subtitle" id="userLabel">Loading...</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="submit-payment.html">Submit</a>
+        <a class="nav-link active" href="admin.html">Verify</a>
+        <a class="nav-link" href="reports.html">Reports</a>
+        <button class="btn secondary small" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <div class="container">
+      <section class="card" style="margin-bottom:18px">
+        <div class="card-header">
+          <div>
+            <h1>Payment verification.</h1>
+            <p>Approve only after checking the proof, reference number, and the correct GCash account.</p>
+          </div>
+          <a class="btn" href="submit-payment.html">+ Add Payment</a>
+        </div>
+
+        <div class="grid four">
+          <div class="metric"><div class="metric-label">Total in current view</div><div class="metric-value" id="metricTotal">₱0</div></div>
+          <div class="metric"><div class="metric-label">Verified</div><div class="metric-value" id="metricVerified">0</div></div>
+          <div class="metric"><div class="metric-label">Pending</div><div class="metric-value" id="metricPending">0</div></div>
+          <div class="metric"><div class="metric-label">Needs Review</div><div class="metric-value" id="metricReview">0</div></div>
+        </div>
+
+        <div class="toolbar">
+          <input id="searchInput" type="search" placeholder="Search order ID, name, reference..." style="max-width:320px">
+          <select id="statusFilter" style="max-width:180px">
+            <option value="pending">Pending</option>
+            <option value="verified">Verified</option>
+            <option value="needs_review">Needs Review</option>
+            <option value="rejected">Rejected</option>
+            <option value="duplicate">Duplicate</option>
+            <option value="all">All Status</option>
+          </select>
+          <select id="typeFilter" style="max-width:180px">
+            <option value="all">All Types</option>
+            <option value="online">Online</option>
+            <option value="walkin">Walk-in</option>
+          </select>
+          <select id="paymentMethodFilter" style="max-width:220px">
+            <option value="all">All Methods</option>
+            <option value="gcash_1">GCash 1</option>
+            <option value="gcash_2">GCash 2</option>
+            <option value="gcash_3">GCash 3</option>
+            <option value="cash">Cash</option>
+            <option value="bank_transfer">Bank Transfer</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="payment-list" id="paymentList">
+        <div class="empty">Loading payments...</div>
+      </section>
+    </div>
+  </main>
+
+  <div class="modal-backdrop" id="paymentModal">
+    <div class="modal" id="paymentModalContent"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
